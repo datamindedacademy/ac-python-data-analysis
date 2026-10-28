@@ -1,0 +1,651 @@
+/* Deck-local styles. Loaded once at startup: restart the dev server after editing. */
+
+/* The agenda has eight topics: tighter rows than the theme's default of six */
+.dm-agenda-body ol > li {
+  padding: 8px 4px !important;
+  font-size: 16px !important;
+}
+.dm-agenda-body h1:first-child {
+  margin-bottom: 16px !important;
+}
+
+/* Comparison grids with five rows */
+.dm-cmp.compact {
+  gap: 8px !important;
+}
+.dm-cmp.compact .dm-cmp-cell {
+  padding: 8px 14px !important;
+}
+.dm-cmp.compact .dm-cmp-rowlabel {
+  padding: 6px !important;
+}
+
+/* A closing sentence under a block: the theme's paragraph margin would glue it to the block above */
+.slidev-layout p.note {
+  margin-top: 24px;
+}
+
+/* Output of code: a slightly darker block than the code above it */
+.output pre,
+.output .slidev-code {
+  background: #e4e6f2 !important;
+}
+.output pre span {
+  color: var(--dm-premium) !important;
+}
+
+/* The DataFrame diagram: a table with its index and one column marked */
+.df-diagram table {
+  border-collapse: collapse;
+  font-family: ui-monospace, monospace;
+  font-size: 15px;
+  margin: 4px 0 8px;
+}
+.df-diagram th,
+.df-diagram td {
+  padding: 5px 18px;
+  border: none;
+  border-bottom: 1px solid rgba(8, 6, 53, 0.12);
+  text-align: right;
+}
+.df-diagram th {
+  font-weight: 700;
+}
+.df-diagram .df-index {
+  color: rgba(8, 6, 53, 0.45);
+}
+.df-diagram .df-series {
+  background: var(--dm-authentic);
+}
+.df-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+.df-label-index {
+  color: rgba(8, 6, 53, 0.6);
+}
+.df-label-series::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  border-radius: 2px;
+  background: var(--dm-authentic);
+}
+
+
+/* Input data (a CSV file, a DataFrame to start from): a warm block, set apart from code and output.
+   In a CSV, every column gets its own colour, like the Rainbow CSV extension. */
+pre.csv,
+pre.input {
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  font-size: var(--slidev-code-font-size, 12px);
+  line-height: var(--slidev-code-line-height, 18px);
+  background: #f7f2e8;
+  border: 1px solid #e6dcc8;
+  padding: var(--slidev-code-padding, 8px 12px);
+  border-radius: var(--slidev-code-radius, 4px);
+  margin: var(--slidev-code-margin, 4px 0);
+}
+.csv-sep { color: #9a9aa8; }
+.csv-c0 { color: #080635; }
+.csv-c1 { color: #543edc; }
+.csv-c2 { color: #a8432a; }
+.csv-c3 { color: #2e7d32; }
+.csv-c4 { color: #9b2fb5; }
+
+/* The name of the input (file or variable), at the bottom right of the block */
+.csv-file {
+  position: relative;
+}
+.csv-name {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  font-size: 11px;
+  color: #8a7f6a;
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+}
+
+/* A row of logos, centred, all the same height */
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+  margin-bottom: 24px;
+}
+.logo-row img {
+  height: 48px;
+  width: auto;
+}
+
+/* The type of an output, at the bottom right of the output block */
+.output {
+  position: relative;
+}
+.output-type {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 11px;
+  color: rgba(8, 6, 53, 0.55);
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+}
+
+/* Every output block says what it is, at the bottom right */
+.output::after {
+  content: "output";
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-size: 11px;
+  color: rgba(8, 6, 53, 0.55);
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+}
+.output:has(.output-type)::after {
+  content: none;
+}
+.output.no-label::after {
+  content: none;
+}
+
+/* A link to the documentation, small, at the bottom of a slide or column */
+.slidev-layout p.docs {
+  margin-top: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* An Excel sheet as it looks in Excel: column letters, row numbers, gridlines, sheet tabs */
+.xlsx {
+  position: relative;
+  border: 1px solid #c8c8c8;
+  font-family: "Segoe UI", Calibri, Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+}
+.xlsx table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+}
+.xlsx th,
+.xlsx td {
+  border: 1px solid #e1e1e1;
+  padding: 1px 6px;
+  height: 20px;
+  line-height: 18px;
+  text-align: left;
+  font-weight: normal;
+}
+.xlsx thead th,
+.xlsx tbody th {
+  background: #f3f3f3;
+  color: #555;
+  text-align: center;
+  border-color: #d4d4d4;
+}
+.xlsx tbody th {
+  width: 28px;
+}
+.xlsx td.num {
+  text-align: right;
+}
+.xlsx .tabs {
+  display: flex;
+  gap: 2px;
+  padding: 3px 6px 0;
+  background: #f3f3f3;
+  border-top: 1px solid #d4d4d4;
+  color: #555;
+}
+.xlsx .tabs span {
+  padding: 2px 10px 3px;
+}
+.xlsx .tabs span.active {
+  background: #fff;
+  color: #217346;
+  font-weight: 600;
+  border-bottom: 2px solid #217346;
+}
+.xlsx .csv-name {
+  bottom: 5px;
+}
+
+/* Two code examples side by side whose output is wide */
+.tight {
+  --slidev-code-font-size: 10px;
+  --slidev-code-line-height: 14px;
+}
+.tight .output {
+  --slidev-code-font-size: 9px;
+  --slidev-code-line-height: 13px;
+}
+
+
+/* The table of data type families: short rows, so the notes below still fit */
+.dm-cmp.types-cmp {
+  grid-template-columns: 170px repeat(4, 1fr) !important;
+  gap: 6px !important;
+}
+.dm-cmp.types-cmp .dm-cmp-rowlabel {
+  font-size: 14px;
+  padding: 4px 10px !important;
+}
+.dm-cmp.types-cmp .dm-cmp-grouphead {
+  font-size: 1.15em;
+  color: var(--dm-connecting);
+  border-bottom-width: 2px;
+}
+.dm-cmp.types-cmp .dm-cmp-col-1,
+.dm-cmp.types-cmp .dm-cmp-col-3 {
+  background: #e4e6f3;
+}
+.dm-cmp.types-cmp .dm-cmp-col-1 code,
+.dm-cmp.types-cmp .dm-cmp-col-3 code {
+  background: transparent;
+  padding: 0;
+}
+.dm-cmp.types-cmp .dm-cmp-cell {
+  padding: 5px 14px !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* An output that is a little too wide for its column */
+.output.small {
+  --slidev-code-font-size: 10px;
+  --slidev-code-line-height: 15px;
+}
+
+/* Under the table of type families: what a missing value means in each family, aligned with its columns */
+.missing-flow {
+  display: grid;
+  grid-template-columns: 170px 1fr 1fr;
+  gap: 6px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--dm-connecting);
+  align-items: center;
+}
+.missing-flow .mf-question {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--dm-premium);
+  text-align: center;
+}
+.missing-flow .mf-answer {
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 2px solid var(--dm-connecting);
+  border-radius: 8px;
+}
+.missing-flow .mf-arrow {
+  margin: 0 8px;
+  color: var(--dm-connecting);
+}
+
+/* "Calculated in Python / the NumPy engine" on the user-defined functions slide */
+.calc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+  margin-top: 4px;
+}
+.calc-row .calc-in { margin: 0; padding-left: 4px; }
+.calc-in {
+  font-size: 13px;
+  color: #6b6b7b;
+}
+.calc-in span {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.calc-slow { background: #fbe9e4; color: #a8432a; }
+.calc-fast { background: #e6f2e7; color: #2e7d32; }
+
+/* A side note: a dashed, quieter box next to the main content */
+.aside-box {
+  border: 1.5px dashed var(--dm-connecting);
+  border-radius: 8px;
+  padding: 14px 18px 6px;
+  font-size: 14px;
+  color: #4a4a5a;
+  background: #faf9ff;
+}
+.aside-box .aside-title {
+  font-weight: 700;
+  color: var(--dm-connecting);
+  margin-bottom: 8px;
+}
+.aside-box p { margin: 0 0 10px; }
+
+/* Code with marked parts, to compare two ways of writing the same steps */
+pre.marked-code {
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  font-size: var(--slidev-code-font-size, 12px);
+  line-height: var(--slidev-code-line-height, 18px);
+  background: #f4f4f4;
+  color: #24292e;
+  padding: var(--slidev-code-padding, 8px 12px);
+  border-radius: var(--slidev-code-radius, 4px);
+  margin: var(--slidev-code-margin, 4px 0);
+}
+pre.marked-code .mark-name { background: #fbe9e4; color: #a8432a; border-radius: 3px; }
+pre.marked-code .mark-col { background: #e6f2e7; color: #2e7d32; border-radius: 3px; }
+/* The index (row labels) of a printed DataFrame, in inputs and outputs */
+.mark-index { background: #f5c451 !important; color: #3d2a00 !important; font-weight: 700; border-radius: 3px; }
+
+/* Under the table of type families: the date and time rows, with one box across the nullable side */
+.types-extra {
+  display: grid;
+  grid-template-columns: 170px repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 6px;
+}
+.types-extra .tx-label {
+  background: var(--dm-premium);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px 10px;
+}
+.types-extra .tx-cell {
+  background: var(--dm-surface);
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.types-extra .tx-missing {
+  background: #e4e6f3;
+}
+.types-extra .tx-missing code {
+  background: transparent;
+  padding: 0;
+}
+.types-extra .tx-none {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 2;
+  border: 2px solid #c0392b;
+  background: #fbe9e4;
+  color: #a8432a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+}
+
+/* One line of code above a plot, in a half-width column: a little smaller, so it stays on one line */
+.code-11 {
+  --slidev-code-font-size: 11px;
+}
+
+/* A highlighted line of code ({n} after the language) gets a background, and the other lines stay readable */
+.hl-bg .slidev-code .line.dishonored {
+  opacity: 1 !important;
+}
+.hl-bg .slidev-code .line.highlighted {
+  background: #f5e6a8;
+  border-radius: 3px;
+}
+
+/* Inputs X and what to predict y: one table, the training and test rows each in a dashed box */
+.xy {
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.xy table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.xy col.c-date { width: 24%; }
+.xy col.c-u { width: 23%; }
+.xy col.c-z { width: 29%; }
+.xy col.c-m { width: 24%; }
+.xy th,
+.xy td {
+  padding: 3px 8px;
+  text-align: right;
+  border: none;
+}
+.xy th:first-child,
+.xy td:first-child {
+  text-align: left;
+}
+.xy .xy-xc { background: #e4e6f3; }
+.xy .xy-yc { background: #fbe9e4; }
+.xy-cols {
+  display: grid;
+  grid-template-columns: 24% 52% 24%;
+  font-family: var(--slidev-font-family, sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 2px;
+}
+.xy-x { color: var(--dm-premium); }
+.xy-y { color: #a8432a; }
+.xy-header {
+  margin: 0 7px;
+  width: calc(100% - 14px) !important;
+}
+.xy-group {
+  position: relative;
+  border: 1.5px dashed var(--dm-connecting);
+  border-radius: 6px;
+  padding: 4px 6px 2px;
+  margin-top: 14px;
+}
+.xy-tag {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  padding: 0 6px;
+  background: #fff;
+  color: var(--dm-connecting);
+  font-family: var(--slidev-font-family, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Steps whose code is long: a little smaller, so it stays on one line */
+.steps-code-sm code {
+  font-size: 12px !important;
+  white-space: nowrap;
+}
+
+/* The arrow from the inputs X to y, on the border between their columns */
+.xy-cols { position: relative; }
+.xy-cols .xy-arrow {
+  position: absolute;
+  left: 69%;
+  top: -4px;
+  transform: translateX(-50%);
+  font-size: 22px;
+  color: var(--dm-connecting);
+}
+/* Code blocks inside steps: no extra margin */
+.steps-code-sm .slidev-code-wrapper {
+  margin: 4px 0 !important;
+}
+.steps-code-sm p {
+  margin: 2px 0 !important;
+}
+
+/* The known days, each marked train or test, with the prediction next to the test days */
+.split-table {
+  border-collapse: collapse;
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  font-size: 13px;
+  margin: 0 auto 6px;
+}
+.split-table th,
+.split-table td {
+  padding: 1px 14px;
+  text-align: right;
+  border: none;
+}
+.split-table th:first-child,
+.split-table td:first-child { text-align: left; }
+.split-table .xy-xc { background: #e4e6f3; }
+.split-table .xy-yc { background: #fbe9e4; }
+.split-table tr.split-test td { border-top: 1px dashed var(--dm-connecting); border-bottom: 1px dashed var(--dm-connecting); }
+.split-pill {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-family: var(--slidev-font-family, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  background: #ececf2;
+  color: #6b6b7b;
+}
+.split-test .split-pill { background: var(--dm-connecting); color: #fff; }
+.split-table .split-pred { color: var(--dm-connecting); font-weight: 700; }
+
+/* Outputs inside steps: as wide as the step, so the type label fits next to the output */
+.steps-code-sm .output {
+  width: 100%;
+}
+.steps-code-sm .output code {
+  font-size: 9px !important;
+}
+.steps-code-sm .output .output-type {
+  font-size: 10px;
+}
+
+/* A long URL, broken only where needed */
+.slidev-layout p.api-url {
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  background: var(--dm-surface);
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 2px 0 8px;
+}
+
+/* The table of HTTP status codes */
+.status-codes {
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+}
+.status-codes th,
+.status-codes td {
+  padding: 4px 8px;
+  border: none;
+  border-bottom: 1px solid rgba(8, 6, 53, 0.12);
+  text-align: left;
+}
+.status-codes td:first-child {
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  font-weight: 700;
+}
+
+/* The parts of a URL, each with what it means */
+.url-parts {
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+}
+.url-parts td {
+  padding: 2px 8px;
+  border: none;
+  border-bottom: 1px solid rgba(8, 6, 53, 0.12);
+  text-align: left;
+}
+.url-parts td:first-child {
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  color: var(--dm-connecting);
+  white-space: nowrap;
+}
+
+/* Download sizes: what you fetch, against what you need */
+.size-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+}
+.size-table th,
+.size-table td {
+  padding: 6px 10px;
+  border: none;
+  border-bottom: 1px solid rgba(8, 6, 53, 0.12);
+  text-align: right;
+}
+.size-table tbody th {
+  text-align: left;
+}
+.size-table .size-best {
+  font-weight: 700;
+  color: var(--dm-connecting);
+}
+
+/* Code in a card stays on one line */
+.dm-info-body code {
+  white-space: nowrap;
+}
+
+/* The comparison of DataFrame libraries */
+.engine-cmp .dm-cmp-rowlabel {
+  font-size: 13px !important;
+  line-height: 1.3;
+}
+.slidev-layout p.engine-punch {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 650;
+}
+.engine-punch b {
+  color: var(--dm-connecting);
+}
+
+/* The SciPy pocket knife: an inline SVG diagram, with a term and the SciPy module for every tool */
+.knife-wrap {
+  margin-top: 8px;
+}
+.knife {
+  width: 100%;
+  height: 380px;
+}
+.knife-term {
+  font-size: 22px;
+  fill: #0b0b3b;
+}
+.knife-detail {
+  font-size: 16px;
+  fill: #55566b;
+}
+.knife-module {
+  font-size: 17px;
+  font-family: var(--slidev-code-font-family, ui-monospace, monospace);
+  fill: #5b4be1;
+}

@@ -1,0 +1,22 @@
+# 7-day cooldown for supply-chain security (in minutes)
+minimumReleaseAge: 10080
+
+overrides:
+  # Slidev's live code editor (Monaco), used only by {monaco} / {monaco-run}
+  # code blocks. These slides don't use it, it's ~100 MB, and it currently
+  # bundles a vulnerable DOMPurify. Remove this line to use the live editor.
+  monaco-editor: "-"
+
+# Like `uv run`: `pnpm run` / `pnpm exec` first install whatever is missing
+# or out of date, e.g. after a container rebuild
+verifyDepsBeforeRun: install
+
+permissions:
+  # Don't link the agent skills Slidev ships into .claude/skills
+  '@slidev/cli':
+    skills: false
+  # Don't run the playwright-chromium install script. It downloads a Chromium
+  # we don't use, because make pdf uses the browser at CHROME_PATH.
+  # pnpm requires this choice to be explicit, or the install fails.
+  playwright-chromium:
+    build: false
