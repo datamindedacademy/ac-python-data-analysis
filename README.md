@@ -1,7 +1,7 @@
 # Academy course: Python Data Analysis
 
 [![Dataminded Academy](https://raw.githubusercontent.com/datamindedacademy/branding/main/assets/badge.svg)](https://github.com/datamindedacademy)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/michiel-de-muynck/academy-python-data-analysis)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datamindedacademy/ac-python-data-analysis)
 
 A hands-on course on data analysis and scientific computing with Python: pandas, NumPy, SciPy,
 Matplotlib and scikit-learn. You analyse a year of Belgian weather: five fictional hobby weather stations
