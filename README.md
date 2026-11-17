@@ -13,7 +13,7 @@ It assumes you know the basics of Python (variables, functions, conditionals, lo
 ## Getting started in GitHub Codespaces
 
 Click the badge above, or **Code → Codespaces → Create codespace on main** on the repository page. The
-devcontainer builds Python 3.14 and `uv`, then runs `uv sync`. The first build takes a few minutes.
+devcontainer builds Python 3.13 and `uv`, then runs `uv sync`. The first build takes a few minutes.
 
 ## Getting started locally
 
